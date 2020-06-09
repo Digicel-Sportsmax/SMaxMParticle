@@ -1,0 +1,41 @@
+{
+    "api": {
+        "require_startup_execution": false,
+        "class_name": "SMaxMParticle.SMaxMParticle",
+        "modules": []
+    },
+    "dependency_repository_url": [
+        "https://github.com/Digicel-Sportsmax/SMaxMParticle.git"
+    ],
+    "platform": "ios",
+    "author_name": "Mohieddine Zarif",
+    "author_email": "mohieddine.zarif@gotocme.com",
+    "manifest_version": "0.0.1",
+    "name": "[SportsMax]: mParticle/Branch",
+    "description": "SportsMax mParticle/Branch Plugin Integration",
+    "type": "analytics",
+    "identifier": "SMaxMParticle",
+    "ui_builder_support": true,
+    "dependency_name": "SMaxMParticle",
+    "dependency_version": "0.0.1",
+    "whitelisted_account_ids": [
+        "5af949534da8f300080050f9"
+    ],
+    "min_zapp_sdk": "12.1.0",
+    "deprecated_since_zapp_sdk": "",
+    "unsupported_since_zapp_sdk": "",
+    "react_native": false,
+    "extra_dependencies": [],
+    "custom_configuration_fields": [
+        {
+            "type": "text",
+            "key": "mparticle_key",
+            "tooltip_text": "mParticle Production Key"
+        },
+        {
+            "type": "text",
+            "key": "mparticle_secret",
+            "tooltip_text": "mParticle Production Secret"
+        }
+    ]
+}
