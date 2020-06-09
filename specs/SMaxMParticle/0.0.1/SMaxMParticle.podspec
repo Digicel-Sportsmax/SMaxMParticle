@@ -23,5 +23,5 @@ Pod::Spec.new do |s|
                 }
 
   s.dependency 'ZappAnalyticsPluginsSDK'
-  s.dependency 'mParticle-Apple-SDK'
+  s.dependency 'mParticle-BranchMetrics'
 end
