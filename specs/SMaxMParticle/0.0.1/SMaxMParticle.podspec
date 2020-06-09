@@ -21,8 +21,6 @@ Pod::Spec.new do |s|
                   'ENABLE_BITCODE' => 'YES',
                   'SWIFT_VERSION' => '5.1'
                 }
-                  
-  s.default_subspec = 'Core'
 
   s.dependency 'ZappAnalyticsPluginsSDK'
   s.dependency 'mParticle-Apple-SDK', '= 7.0.9'
