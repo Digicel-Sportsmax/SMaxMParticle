@@ -85,10 +85,6 @@ open class SMaxMParticle: ZPAnalyticsProvider, ZPPlayerAnalyticsProviderProtocol
             let mParticleProdSecret = self.configurationJSON?[self.MPARTCILE_KEY] as? String {
                 let options = MParticleOptions(key: mParticleProdKey,
                                                      secret: mParticleProdSecret)
-                if let identityRequest = EventsLogger.sharedInstance.mParticleIdentity() {
-                    options.identifyRequest = identityRequest
-                }
-
                 #if PROD
                 options.environment = .production
                 #else

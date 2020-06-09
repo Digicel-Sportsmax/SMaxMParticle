@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.source_files = 'Classes/*.{swift,h,m}'
+  s.resources = ['Resources/*.{storyboard,xib,png,plist}']
 
   s.xcconfig =  { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
                   'ENABLE_BITCODE' => 'YES',
