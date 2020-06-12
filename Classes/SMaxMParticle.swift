@@ -82,13 +82,18 @@ open class SMaxMParticle: ZPAnalyticsProvider, ZPPlayerAnalyticsProviderProtocol
     
     fileprivate func setupMParticle() {
         if let mParticleProdKey = self.configurationJSON?[self.MPARTCILE_KEY] as? String,
-            let mParticleProdSecret = self.configurationJSON?[self.MPARTCILE_KEY] as? String {
+            let mParticleProdSecret = self.configurationJSON?[self.MPARTICLE_SECRET] as? String {
                 let options = MParticleOptions(key: mParticleProdKey,
                                                      secret: mParticleProdSecret)
+                
+                let identityRequest = MPIdentityApiRequest.init()
+                
+                options.identifyRequest = identityRequest
+
                 #if PROD
-                options.environment = .production
+                options.environment = MPEnvironment.production
                 #else
-                options.environment = .development
+                options.environment = MPEnvironment.development
                 #endif
                 
                 MParticle.sharedInstance().start(with: options)
