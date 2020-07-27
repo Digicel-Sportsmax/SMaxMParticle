@@ -114,7 +114,7 @@ open class SMaxMParticle: ZPAnalyticsProvider, ZPPlayerAnalyticsProviderProtocol
         }
         else {
             combinedParameters = refactorEventParameters(parameters: combinedParameters)
-            event?.customAttributes = combinedParameters
+            //event?.customAttributes = combinedParameters
         }
         
         if (event != nil) {
@@ -138,7 +138,7 @@ open class SMaxMParticle: ZPAnalyticsProvider, ZPPlayerAnalyticsProviderProtocol
         }
         else {
             combinedParameters = refactorEventParameters(parameters: combinedParameters)
-            event?.customAttributes = combinedParameters
+            //event?.customAttributes = combinedParameters
         }
         
         if (event != nil) {
