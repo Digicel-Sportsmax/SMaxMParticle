@@ -114,7 +114,7 @@ open class SMaxMParticle: ZPAnalyticsProvider, ZPPlayerAnalyticsProviderProtocol
         }
         else {
             combinedParameters = refactorEventParameters(parameters: combinedParameters)
-            //event?.customAttributes = combinedParameters
+            event?.customAttributes = combinedParameters
         }
         
         if (event != nil) {
@@ -138,7 +138,7 @@ open class SMaxMParticle: ZPAnalyticsProvider, ZPPlayerAnalyticsProviderProtocol
         }
         else {
             combinedParameters = refactorEventParameters(parameters: combinedParameters)
-            //event?.customAttributes = combinedParameters
+            event?.customAttributes = combinedParameters
         }
         
         if (event != nil) {
@@ -336,12 +336,17 @@ open class SMaxMParticle: ZPAnalyticsProvider, ZPPlayerAnalyticsProviderProtocol
     public func refactorEventParameters(parameters: [String: NSObject]) -> [String: NSObject]{
         var validateParameters = [String: NSObject]()
         for (key, value) in parameters {
-            let validateParamName = refactorParamName(eventName:key)
-            var validateParamValue = value
-            if ((value as? String) != nil){
-                validateParamValue = refactorParamValue(eventValue:value as! String) as NSObject
+            if key != "Screen ID" {
+                let validateParamName = refactorParamName(eventName:key)
+                var validateParamValue = value
+                if ((value as? String) != nil){
+                    validateParamValue = refactorParamValue(eventValue:value as! String) as NSObject
+                    validateParameters[validateParamName] = validateParamValue
+                } else {
+                   // TODO: loop through more info
+                }
+                
             }
-            validateParameters[validateParamName] = validateParamValue
         }
         return validateParameters
     }
